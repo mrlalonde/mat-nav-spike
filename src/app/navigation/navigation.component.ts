@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { NavItem } from './nav-item';
+import {CapabilityService} from '../capability.service';
 
 @Component({
   selector: 'app-navigation',
@@ -16,37 +17,18 @@ export class NavigationComponent implements OnInit {
 
   public items: NavItem[];
 
+  private capabilityService: CapabilityService;
+
   public hasNavigation(): boolean {
     return this.items && this.items.length > 0;
   }
 
-  constructor() { }
+  constructor(capabilityService: CapabilityService) {
+    this.capabilityService = capabilityService;
+   }
 
   ngOnInit() {
-    this.items = [
-      {
-        displayName: 'Action',
-        disabled: false,
-        iconName: 'work',
-        children: [
-          {
-            displayName: 'Report',
-            disabled: false,
-            iconName: 'description'
-          },
-          {
-            displayName: 'Flag',
-            disabled: false,
-            iconName: 'flag'
-          }
-        ]
-      },
-      {
-        displayName: 'Enrich',
-        disabled: false,
-        iconName: 'attach_money'
-      }
-    ];
+    this.items = this.capabilityService.lookupCapabilities(this.type);
   }
 
 }
