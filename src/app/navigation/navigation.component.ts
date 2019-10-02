@@ -14,34 +14,39 @@ export class NavigationComponent implements OnInit {
   @Input()
   public type: string;
 
-  public items: NavItem[] = [
-    {
-      displayName: 'Action',
-      disabled: false,
-      iconName: 'work',
-      children: [
-        {
-          displayName: 'Report',
-          disabled: false,
-          iconName: 'description'
-        },
-        {
-          displayName: 'Flag',
-          disabled: false,
-          iconName: 'flag'
-        }
-      ]
-    },
-    {
-      displayName: 'Enrich',
-      disabled: false,
-      iconName: 'attach_money'
-    }
-  ];
+  public items: NavItem[];
+
+  public hasNavigation(): boolean {
+    return this.items && this.items.length > 0;
+  }
 
   constructor() { }
 
   ngOnInit() {
+    this.items = [
+      {
+        displayName: 'Action',
+        disabled: false,
+        iconName: 'work',
+        children: [
+          {
+            displayName: 'Report',
+            disabled: false,
+            iconName: 'description'
+          },
+          {
+            displayName: 'Flag',
+            disabled: false,
+            iconName: 'flag'
+          }
+        ]
+      },
+      {
+        displayName: 'Enrich',
+        disabled: false,
+        iconName: 'attach_money'
+      }
+    ];
   }
 
 }

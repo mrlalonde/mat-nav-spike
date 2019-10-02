@@ -1,6 +1,7 @@
 import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import {Router} from '@angular/router';
 import {NavItem} from '../navigation/nav-item';
+import { MatMenu } from '@angular/material';
 
 @Component({
   selector: 'app-menu-item',
@@ -9,7 +10,7 @@ import {NavItem} from '../navigation/nav-item';
 })
 export class MenuItemComponent implements OnInit {
   @Input() items: NavItem[];
-  @ViewChild('childMenu', {static: false}) public childMenu;
+  @ViewChild('childMenu', {static: true}) public childMenu: any;
 
   constructor(public router: Router) {
   }

@@ -1,22 +1,13 @@
-<button mat-button [matMenuTriggerFor]="menu.childMenu" [disabled]="!(items && items.length > 0)">
-  {{value}}
-</button>
-<app-menu-item #menu [items]="items"></app-menu-item>
+<div *ngIf="hasNavigation"></div>
 
 
-<!-- <button mat-button [matMenuTriggerFor]="menu">{{value}}</button>
+<ng-container *ngIf="hasNavigation; then withNavigation else withoutNavigation"></ng-container>
 
-<mat-menu #menu="matMenu">
-  <button mat-menu-item>
-    <mat-icon>dialpad</mat-icon>
-    <span>Redial</span>
+<ng-template #withNavigation>
+  <app-menu-item #menu [items]="items"></app-menu-item>
+  <button mat-button [matMenuTriggerFor]="menu.childMenu">
+    {{value}}
   </button>
-  <button mat-menu-item disabled>
-    <mat-icon>voicemail</mat-icon>
-    <span>Check voicemail</span>
-  </button>
-  <button mat-menu-item>
-    <mat-icon>notifications_off</mat-icon>
-    <span>Disable alerts</span>
-  </button>
-</mat-menu> -->
+
+</ng-template>
+<ng-template #withoutNavigation>{{value}}</ng-template>
