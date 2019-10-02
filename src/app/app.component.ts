@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'mat-nav-spike';
+
+  appType = 'IP';
+  appValue = '41.2.3.4'
 }
