@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { NavItem } from './navigation/nav-item';
 
-const cannedCapabilities: NavItem[] =  [
+const cannedCapabilities: Map<string, NavItem[]> = new Map( [['IP', [
   {
     displayName: 'Action',
     disabled: false,
@@ -24,7 +24,7 @@ const cannedCapabilities: NavItem[] =  [
     disabled: false,
     iconName: 'attach_money'
   }
-];
+]]]);
 
 @Injectable({
   providedIn: 'root'
@@ -34,6 +34,6 @@ export class CapabilityService {
   constructor() { }
 
   public lookupCapabilities(type: string): NavItem[] {
-    return cannedCapabilities;
+    return cannedCapabilities.get(type) || [];
   }
 }
