@@ -6,19 +6,25 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule, MatIconModule, MatMenuModule} from '@angular/material';
 import { IpComponent } from './ip/ip.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { MenuItemComponent } from './menu-item/menu-item.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
     AppComponent,
     IpComponent,
-    NavigationComponent
+    NavigationComponent,
+    MenuItemComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MatButtonModule,
     MatIconModule,
-    MatMenuModule
+    MatMenuModule,
+    RouterModule.forRoot(
+      []
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,10 @@
-<button mat-button [matMenuTriggerFor]="menu">{{value}}</button>
+<button mat-button [matMenuTriggerFor]="menu.childMenu" [disabled]="!(items && items.length > 0)">
+  {{value}}
+</button>
+<app-menu-item #menu [items]="items"></app-menu-item>
+
+
+<!-- <button mat-button [matMenuTriggerFor]="menu">{{value}}</button>
 
 <mat-menu #menu="matMenu">
   <button mat-menu-item>
@@ -13,4 +19,4 @@
     <mat-icon>notifications_off</mat-icon>
     <span>Disable alerts</span>
   </button>
-</mat-menu>
+</mat-menu> -->
