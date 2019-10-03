@@ -1,13 +1,13 @@
 <div *ngIf="hasNavigation"></div>
 
 
-<ng-container *ngIf="hasNavigation; then withNavigation else withoutNavigation"></ng-container>
+<ng-container *ngIf="hasNavigation(); then withNavigation else withoutNavigation"></ng-container>
 
 <ng-template #withNavigation>
   <app-menu-item #menu [items]="items"></app-menu-item>
   <button mat-button [matMenuTriggerFor]="menu.childMenu">
-    {{value}}
+    {{value}} of type {{type}}
   </button>
 
 </ng-template>
-<ng-template #withoutNavigation>{{value}}</ng-template>
+<ng-template #withoutNavigation>{{value}} of type {{type}} without nav</ng-template>

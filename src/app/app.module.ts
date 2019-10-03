@@ -8,6 +8,7 @@ import { IpComponent } from './ip/ip.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { MenuItemComponent } from './menu-item/menu-item.component';
 import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,8 @@ import { RouterModule } from '@angular/router';
     MatButtonModule,
     MatIconModule,
     MatMenuModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(
       []
     )

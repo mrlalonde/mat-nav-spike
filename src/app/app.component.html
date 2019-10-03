@@ -287,7 +287,17 @@
     }
   }
 </style>
+<div>
+    <label>value:
+      <input type="text" [formControl]="appValueControl" />
+    </label>
+  </div>
 
+  <div>
+      <label>type:
+        <input type="text" [formControl]="appTypeControl"/>
+      </label>
+    </div>
 <app-ip [value]="appValue" [type]="appType"></app-ip>
 
 <router-outlet></router-outlet>

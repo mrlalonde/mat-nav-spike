@@ -9,7 +9,7 @@ import { MatMenu } from '@angular/material';
   styleUrls: ['./menu-item.component.css']
 })
 export class MenuItemComponent implements OnInit {
-  @Input() items: NavItem[];
+  @Input() public items: NavItem[];
   @ViewChild('childMenu', {static: true}) public childMenu: any;
 
   constructor(public router: Router) {

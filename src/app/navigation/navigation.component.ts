@@ -12,8 +12,20 @@ export class NavigationComponent implements OnInit {
   @Input()
   public value: string;
 
+  private _type: string;
+
   @Input()
-  public type: string;
+  public set type(value: string) {
+    console.log('Setting type ' + value + ' was ' + this._type);
+    this.items = this.capabilityService.lookupCapabilities(value);
+
+
+    this._type = value;
+  }
+
+  public get type() {
+    return this._type;
+  }
 
   public items: NavItem[];
 

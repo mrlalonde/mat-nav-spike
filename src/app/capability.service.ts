@@ -24,6 +24,13 @@ const cannedCapabilities: Map<string, NavItem[]> = new Map( [['IP', [
     disabled: false,
     iconName: 'attach_money'
   }
+]],
+['Tag', [
+  {
+    displayName: 'Alert',
+    disabled: false,
+    iconName: 'add-alert'
+  }
 ]]]);
 
 @Injectable({
@@ -34,6 +41,8 @@ export class CapabilityService {
   constructor() { }
 
   public lookupCapabilities(type: string): NavItem[] {
+    console.log('looking up {}', type);
+    console.log(cannedCapabilities);
     return cannedCapabilities.get(type) || [];
   }
 }
