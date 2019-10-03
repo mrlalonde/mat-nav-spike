@@ -287,17 +287,19 @@
     }
   }
 </style>
-<div>
-    <label>value:
-      <input type="text" [formControl]="appValueControl" />
-    </label>
+
+<div class="example-containers">
+    <mat-form-field>
+        <mat-label>Select an option</mat-label>
+        <mat-select [(value)]="appType">
+          <mat-option>None</mat-option>
+          <mat-option value="IP">IP</mat-option>
+          <mat-option value="Tag">Tag</mat-option>
+          <mat-option value="Unknown">Unknown</mat-option>
+        </mat-select>
+      </mat-form-field>
   </div>
 
-  <div>
-      <label>type:
-        <input type="text" [formControl]="appTypeControl"/>
-      </label>
-    </div>
 <app-ip [value]="appValue" [type]="appType"></app-ip>
 
 <router-outlet></router-outlet>

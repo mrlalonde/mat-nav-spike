@@ -9,22 +9,6 @@ import { FormControl } from '@angular/forms'
 export class AppComponent {
   title = 'mat-nav-spike';
 
-  appValueControl = new FormControl();
-  appTypeControl = new FormControl();
-
-  get appValue(): string {
-    return this.appValueControl.value;
-  }
-
-  set appValue(value) {
-    this.appValueControl.setValue(value);
-  }
-
-  get appType(): string {
-    return this.appTypeControl.value;
-  }
-
-  set appType(value: string) {
-    this.appTypeControl.setValue(value);
-  }
+  public appType: string;
+  public appValue = '1.1.1.1';
 }

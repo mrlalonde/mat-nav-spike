@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatButtonModule, MatIconModule, MatMenuModule} from '@angular/material';
+import {MatButtonModule, MatIconModule, MatMenuModule, MatFormField, MatFormFieldModule, MatSelectModule, MatOptionModule} from '@angular/material';
 import { IpComponent } from './ip/ip.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { MenuItemComponent } from './menu-item/menu-item.component';
@@ -24,6 +24,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatIconModule,
     MatMenuModule,
     FormsModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatOptionModule,
     ReactiveFormsModule,
     RouterModule.forRoot(
       []

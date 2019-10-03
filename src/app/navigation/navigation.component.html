@@ -6,8 +6,8 @@
 <ng-template #withNavigation>
   <app-menu-item #menu [items]="items"></app-menu-item>
   <button mat-button [matMenuTriggerFor]="menu.childMenu">
-    {{value}} of type {{type}}
+    {{value}}
   </button>
 
 </ng-template>
-<ng-template #withoutNavigation>{{value}} of type {{type}} without nav</ng-template>
+<ng-template #withoutNavigation>{{value}}</ng-template>
